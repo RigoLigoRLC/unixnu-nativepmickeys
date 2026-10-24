@@ -1,0 +1,16 @@
+NativePmicKeys
+Copyright (c) 2026, UniXNU contributors.
+
+The implementation is licensed under BSD-2-Clause-Patent. Register meanings and
+input wiring were researched using the Samsung SM7325 kernel:
+https://github.com/Bush-cat/android_kernel_samsung_sm7325
+drivers/input/misc/qpnp-power-on.c
+drivers/pinctrl/qcom/pinctrl-spmi-gpio.c
+Those reference files retain their GPL-2.0 notices. Facts used by board code are
+PON Gen3 real-time status bits, PBS debounce encoding, GPIO mode, VIN, pull-up
+and interrupt register offsets. The generic module receives those board values
+through NativePmicKey and contains no PMIC address or HID usage assumptions.
+
+UniXNU-sheng package/ButtonProbe.cpp and NativeHidInput supplied the reference
+for Consumer Power and Volume Increment/Decrement reports. Their source notices
+remain intact in the reference repositories. No vendor binary is distributed.
